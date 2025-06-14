@@ -16,7 +16,7 @@ from langchain_openai import OpenAIEmbeddings
 if 'chroma_langchain_db' not in os.listdir():
     # os.system('unzip chroma_langchain_db.zip')
     print("Unpackign Folder")
-    shutil.unpack_archive('./chroma_langchain_db.zip','./chroma_langchain_db','zip')
+    shutil.unpack_archive('./chroma_langchain_db.zip','./','zip')
 
 llm = ChatOpenAI()
 embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
