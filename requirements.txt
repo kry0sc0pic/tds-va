@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pysqlite3-binary
+langchain-community
+langchain-openai
+langchain-chroma
+chromadb
+uvicorn
