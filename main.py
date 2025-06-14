@@ -3,6 +3,7 @@ import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import uvicorn
 import os
+import shutil
 from fastapi import FastAPI
 from pydantic import BaseModel
 from langchain_chroma import Chroma
@@ -13,7 +14,8 @@ from langchain_openai import ChatOpenAI
 from langchain_openai import OpenAIEmbeddings 
 
 if 'chroma_langchain_db' not in os.listdir():
-    os.system('unzip chroma_langchain_db.zip')
+    # os.system('unzip chroma_langchain_db.zip')
+    shutil.unpack_archive('./chroma_langchain_db.zip','./chroma_langchain_db','zip')
 
 llm = ChatOpenAI()
 embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
